@@ -1,0 +1,38 @@
+/*
+===============================================================================
+   THEME HEADER — Required by WordPress
+===============================================================================
+
+This header is required by WordPress to recognize this folder as a valid theme.
+Update these values before using this theme in production.
+
+Theme Name:          The name shown in WordPress admin > Appearance > Themes
+Theme URI:           Link to theme information/demo site
+Author:              Your name or agency name
+Author URI:          Your website
+Description:         Short description shown in the theme browser
+Version:             Theme version number (update when releasing new versions)
+Tested up to:        Highest WordPress version tested (e.g., 6.4, 6.5, 7.0)
+Requires PHP:        Minimum PHP version required (8.0+)
+License:             License type (usually GPL v2 or later)
+Text Domain:         Used for translations; must match mytheme prefix in code
+                     (run find-replace: mytheme → yourthemeslug)
+
+===============================================================================
+*/
+
+/*
+Theme Name: My Theme
+Theme URI: https://example.com/
+Author: Your Name
+Author URI: https://example.com
+Description: Custom WordPress theme.
+Version: 1.0.0
+Tested up to: 7.0
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mytheme
+
+*/
+
