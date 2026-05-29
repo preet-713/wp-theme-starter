@@ -101,6 +101,3 @@ foreach ( $mytheme_modules as $module ) {
 	Each CPT should have its own file in /post-types/.
 ==========================================================================
 */
-
-// Example: Register Features post type.
-// require_once THEME_DIR . '/post-types/example-cpt.php';.
