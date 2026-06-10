@@ -17,10 +17,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-/* ==========================================================================
-   Global Theme Constants
-   These are used throughout the theme for paths, URIs, and identifiers.
-   ========================================================================== */
+/*
+==========================================================================
+	Global Theme Constants
+	These are used throughout the theme for paths, URIs, and identifiers.
+==========================================================================
+*/
 
 /**
  * Current theme version.
@@ -53,27 +55,32 @@ define( 'MYTHEME_INC', THEME_DIR . '/inc/' );
  */
 define( 'MYTHEME_TEXTDOMAIN', 'mytheme' );
 
-/* ==========================================================================
-   Module Autoloader
-   All files listed below are required to load the theme.
-   Add new helpers, setup files, or block registrations here.
-   ========================================================================== */
+/*
+==========================================================================
+	Module Autoloader
+	All files listed below are required to load the theme.
+	Add new helpers, setup files, or block registrations here.
+==========================================================================
+*/
 
 $mytheme_modules = array(
 	/* Helpers — Utility functions used throughout templates */
-	'helpers/svg.php',        // SVG icon functions: mytheme_svg_icon()
-	'helpers/preview.php',    // Block preview helpers: mytheme_block_preview_placeholder()
-	'helpers/sanitize.php',   // Output sanitization: mytheme_inline(), mytheme_rich()
-	'helpers/image.php',      // ACF image helpers: mytheme_acf_image()
+	'helpers/svg.php',        // SVG icon functions: mytheme_svg_icon().
+	'helpers/preview.php',    // Block preview helpers: mytheme_block_preview_placeholder().
+	'helpers/sanitize.php',   // Output sanitization: mytheme_inline(), mytheme_rich().
+	'helpers/image.php',      // ACF image helpers: mytheme_acf_image().
 
-	/* Blocks — Gutenberg block registration and categories */
-	'blocks/category.php',    // Register custom block category
-	'blocks/register.php',    // Register all custom ACF blocks
+	'performance/cleanup.php',
+	'performance/lazyload.php',
 
 	/* Setup — Theme initialization and configuration */
-	'setup/assets.php',       // Enqueue CSS/JS files (wp_enqueue_style, wp_enqueue_script)
-	'setup/menus.php',        // Register navigation menus
-	'setup/theme-support.php', // Add WordPress theme support features
+	'setup/assets.php',       // Enqueue CSS/JS files (wp_enqueue_style, wp_enqueue_script).
+	'setup/menus.php',        // Register navigation menus.
+	'setup/theme-support.php', // Add WordPress theme support features.
+
+	/* Blocks — Gutenberg block registration and categories */
+	'blocks/category.php',    // Register custom block category.
+	'blocks/register.php',    // Register all custom ACF blocks.
 );
 
 /**
@@ -81,17 +88,16 @@ $mytheme_modules = array(
  * Prevents fatal errors if a module is missing.
  */
 foreach ( $mytheme_modules as $module ) {
-	$path = MYTHEME_INC . $module;
-	if ( is_readable( $path ) ) {
-		require_once $path;
+	$inc_path = MYTHEME_INC . $module;
+	if ( is_readable( $inc_path ) ) {
+		require_once $inc_path;
 	}
 }
 
-/* ==========================================================================
-   Custom Post Types (Optional)
-   Uncomment the line below to register custom post types.
-   Each CPT should have its own file in /post-types/
-   ========================================================================== */
-
-// Example: Register Features post type
-// require_once THEME_DIR . '/post-types/example-cpt.php';
+/*
+==========================================================================
+	Custom Post Types (Optional).
+	Uncomment the line below to register custom post types.
+	Each CPT should have its own file in /post-types/.
+==========================================================================
+*/
